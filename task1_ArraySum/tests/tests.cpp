@@ -20,17 +20,22 @@ BOOST_AUTO_TEST_CASE(CanSumString)
 	BOOST_CHECK_EQUAL(ArraySum(strings), "catmax");
 }
 
-BOOST_AUTO_TEST_CASE(CanSumDoubles)
+BOOST_AUTO_TEST_CASE(CanSumFloatNumbers)
 {
-	vector<double> doubles;
-	doubles.push_back(0.2);
-	doubles.push_back(0.3);
-	BOOST_CHECK_EQUAL(ArraySum(doubles), 0.5);
+	vector<double> floatNumbers;
+	floatNumbers.push_back(0.2);
+	floatNumbers.push_back(0.3);
+	BOOST_CHECK_EQUAL(ArraySum(floatNumbers), 0.5);
 }
 
-BOOST_AUTO_TEST_CASE(ReturnT)
+BOOST_AUTO_TEST_CASE(IfEmptyVector)
 {
-
+	vector<double> floatNumbers;
+	BOOST_CHECK_EQUAL(ArraySum(floatNumbers), 0);
+	vector<string> strings;
+	BOOST_CHECK_EQUAL(ArraySum(strings), "");
+	vector<int> numbers;
+	BOOST_CHECK_EQUAL(ArraySum(numbers), 0);
 }
 
 
