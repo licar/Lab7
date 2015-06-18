@@ -12,4 +12,5 @@ public:
 	virtual void SetPatronymic(std::string& patronymic) = 0;
 	virtual std::string GetAddress() const = 0;
 	virtual void SetAddress(std::string& address) = 0;
+	virtual ~IPerson(){}
 };

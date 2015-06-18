@@ -13,7 +13,7 @@ T ArraySum(vector<T> const &arrayElem)
 
 	T sumElem = T();
 
-	for (auto elem : arrayElem)
+	for (auto &elem : arrayElem)
 	{
 			sumElem += elem;
 	}

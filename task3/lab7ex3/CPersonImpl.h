@@ -1,6 +1,6 @@
 #pragma once
-template <class CBase>
 
+template <class CBase>
 class CPersonImpl : public CBase
 {
 public:

@@ -1,8 +1,8 @@
 #pragma once
 #include "CPersonImpl.h"
 #include "IStudent.h"
-template <typename Base>
 
+template <typename Base>
 class CStudentImpl : public CPersonImpl<Base>
 {
 public:

@@ -63,30 +63,63 @@ BOOST_AUTO_TEST_CASE(CanClear)
 	stringStack.Clear();
 	BOOST_CHECK(stringStack.IsEmpty());
 }
-/*
+
 BOOST_AUTO_TEST_CASE(CanConstructFromStack)
 {
-	stringStack.Push("ad");
-	stringStack.Push("da");
+	stringStack.Push("abc");
+	stringStack.Push("bcd");
+	stringStack.Push("cde");
 	
-	BOOST_CHECK_EQUAL(stringStack.Peek(), "da");
+	BOOST_CHECK_EQUAL(stringStack.Peek(), "cde");
 	CStack<std::string> stringStackTwo(stringStack);
 	BOOST_CHECK(!stringStack.IsEmpty());
 	BOOST_CHECK(!stringStackTwo.IsEmpty());
 
-	BOOST_CHECK_EQUAL(stringStackTwo.Peek(), "da");
+	BOOST_CHECK_EQUAL(stringStackTwo.Pop(), "cde");
+	BOOST_CHECK_EQUAL(stringStackTwo.Pop(), "bcd");
+	BOOST_CHECK_EQUAL(stringStackTwo.Pop(), "abc");
 
+	BOOST_CHECK_EQUAL(stringStack.Pop(), "cde");
+	BOOST_CHECK_EQUAL(stringStack.Pop(), "bcd");
+	BOOST_CHECK_EQUAL(stringStack.Pop(), "abc");
 }
 
 BOOST_AUTO_TEST_CASE(CanAssigned)
 {
-	stringStack.Push("ad");
-	stringStack.Push("da");
+	stringStack.Push("abc");
+	stringStack.Push("bcd");
+	stringStack.Push("cde");
 
 	CStack<std::string> stringStackTwo = stringStack;
 	BOOST_CHECK(!stringStack.IsEmpty());
 	BOOST_CHECK(!stringStackTwo.IsEmpty());
+	BOOST_CHECK_EQUAL(stringStackTwo.Pop(), "cde");
+	BOOST_CHECK_EQUAL(stringStackTwo.Pop(), "bcd");
+	BOOST_CHECK_EQUAL(stringStackTwo.Pop(), "abc");
+
+	BOOST_CHECK_EQUAL(stringStack.Pop(), "cde");
+	BOOST_CHECK_EQUAL(stringStack.Pop(), "bcd");
+	BOOST_CHECK_EQUAL(stringStack.Pop(), "abc");
 
 }
-*/
+
+BOOST_AUTO_TEST_CASE(TestInteger)
+{
+	CStack<int> intStack;
+	intStack.Push(10);
+	intStack.Push(20);
+	intStack.Push(30);
+
+	CStack<int> intStackTwo = intStack;
+	BOOST_CHECK(!intStack.IsEmpty());
+	BOOST_CHECK(!intStackTwo.IsEmpty());
+	BOOST_CHECK_EQUAL(intStackTwo.Pop(), 30);
+	BOOST_CHECK_EQUAL(intStackTwo.Pop(), 20);
+	BOOST_CHECK_EQUAL(intStackTwo.Pop(), 10);
+
+	BOOST_CHECK_EQUAL(intStack.Pop(), 30);
+	BOOST_CHECK_EQUAL(intStack.Pop(), 20);
+	BOOST_CHECK_EQUAL(intStack.Pop(), 10);
+}
+
 BOOST_AUTO_TEST_SUITE_END()
